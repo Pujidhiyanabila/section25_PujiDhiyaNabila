@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:section25/pages/add_contact.dart';
+import 'package:section25/pages/base_view.dart';
 import 'package:section25/pages/contact_view.dart';
 import 'package:section25/providers/contact_view_model.dart';
 
@@ -20,10 +21,11 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
-          ContactView.route:(context) => ContactView(),
-          AddContact.route:(context) => AddContact(),
+          BaseView.route: (context) => const BaseView(),
+          //ContactView.route:(context) => const ContactView(),
+          // AddContact.route:(context) => AddContact(),
         },
-        initialRoute: ContactView.route,
+        initialRoute: BaseView.route,
       ),
     );
   }
