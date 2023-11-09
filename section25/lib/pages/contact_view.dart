@@ -4,7 +4,7 @@ import 'package:section25/pages/add_contact.dart';
 import 'package:section25/providers/contact_view_model.dart';
 
 class ContactView extends StatefulWidget {
-  const ContactView({ Key? key }) : super(key: key);
+  const ContactView({Key? key}) : super(key: key);
 
   static const String route = '/contact';
 
@@ -23,7 +23,7 @@ class _ContactViewState extends State<ContactView> {
   Widget body() {
     final modelView = Provider.of<ContactViewModel>(context);
     if (modelView.contactState == ContactState.loading) {
-      return CircularProgressIndicator();
+      return const CircularProgressIndicator();
     } else if (modelView.contactState == ContactState.none) {
       return ListView.builder(
         itemCount: modelView.contacts.length,
@@ -60,11 +60,11 @@ class _ContactViewState extends State<ContactView> {
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, AddContact.route);
-        },
-        child: const Icon(Icons.add),
-      ),
+            onPressed: () {
+              Navigator.pushNamed(context, AddContact.route);
+            },
+            child: const Icon(Icons.add),
+          ),
       body: Center(child: body()),
     );
   }
